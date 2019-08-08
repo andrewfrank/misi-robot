@@ -1,0 +1,27 @@
+08/08/2019 03:09:25 PM DEBUG Getting list of fasta files from query directory.
+08/08/2019 03:09:25 PM DEBUG Getting list of fasta files from reference directory.
+08/08/2019 03:09:25 PM INFO Total jobs to submit: 6
+08/08/2019 03:09:25 PM DEBUG Attempting submission: 1/6 ('.\\examples\\query\\Escherichia_albertii_GCF_001549955.1_ASM154995v1_cds_from_genomic.fna', '.\\examples\\reference\\Shigella_boydii_GCF_001027225.1_ASM102722v1_cds_from_genomic.fna')
+08/08/2019 03:09:28 PM DEBUG Starting new HTTPS connection (1): ani.jgi-psf.org:443
+08/08/2019 03:09:59 PM DEBUG https://ani.jgi-psf.org:443 "POST /html/calc_results.php HTTP/1.1" 200 1883
+08/08/2019 03:09:59 PM INFO Submission completed: 1/6
+08/08/2019 03:10:04 PM DEBUG Attempting submission: 2/6 ('.\\examples\\query\\Escherichia_albertii_GCF_001549955.1_ASM154995v1_cds_from_genomic.fna', '.\\examples\\reference\\Shigella_dysenteriae_GCF_002741615.1_ASM274161v1_cds_from_genomic.fna')
+08/08/2019 03:10:06 PM DEBUG Starting new HTTPS connection (1): ani.jgi-psf.org:443
+08/08/2019 03:10:34 PM DEBUG https://ani.jgi-psf.org:443 "POST /html/calc_results.php HTTP/1.1" 200 1888
+08/08/2019 03:10:34 PM INFO Submission completed: 2/6
+08/08/2019 03:10:40 PM DEBUG Attempting submission: 3/6 ('.\\examples\\query\\Escherichia_albertii_GCF_001549955.1_ASM154995v1_cds_from_genomic.fna', '.\\examples\\reference\\Shigella_flexneri_GCF_000783735.2_ASM78373v2_cds_from_genomic.fna')
+08/08/2019 03:10:41 PM DEBUG Starting new HTTPS connection (1): ani.jgi-psf.org:443
+08/08/2019 03:11:14 PM DEBUG https://ani.jgi-psf.org:443 "POST /html/calc_results.php HTTP/1.1" 200 1887
+08/08/2019 03:11:15 PM INFO Submission completed: 3/6
+08/08/2019 03:11:20 PM DEBUG Attempting submission: 4/6 ('.\\examples\\query\\Escherichia_coli_GCF_000005845.2_ASM584v2_cds_from_genomic.fna', '.\\examples\\reference\\Shigella_boydii_GCF_001027225.1_ASM102722v1_cds_from_genomic.fna')
+08/08/2019 03:11:22 PM DEBUG Starting new HTTPS connection (1): ani.jgi-psf.org:443
+08/08/2019 03:11:51 PM DEBUG https://ani.jgi-psf.org:443 "POST /html/calc_results.php HTTP/1.1" 200 1876
+08/08/2019 03:11:51 PM INFO Submission completed: 4/6
+08/08/2019 03:11:56 PM DEBUG Attempting submission: 5/6 ('.\\examples\\query\\Escherichia_coli_GCF_000005845.2_ASM584v2_cds_from_genomic.fna', '.\\examples\\reference\\Shigella_dysenteriae_GCF_002741615.1_ASM274161v1_cds_from_genomic.fna')
+08/08/2019 03:11:57 PM DEBUG Starting new HTTPS connection (1): ani.jgi-psf.org:443
+08/08/2019 03:12:31 PM DEBUG https://ani.jgi-psf.org:443 "POST /html/calc_results.php HTTP/1.1" 200 1886
+08/08/2019 03:12:32 PM INFO Submission completed: 5/6
+08/08/2019 03:12:37 PM DEBUG Attempting submission: 6/6 ('.\\examples\\query\\Escherichia_coli_GCF_000005845.2_ASM584v2_cds_from_genomic.fna', '.\\examples\\reference\\Shigella_flexneri_GCF_000783735.2_ASM78373v2_cds_from_genomic.fna')
+08/08/2019 03:12:38 PM DEBUG Starting new HTTPS connection (1): ani.jgi-psf.org:443
+08/08/2019 03:13:07 PM DEBUG https://ani.jgi-psf.org:443 "POST /html/calc_results.php HTTP/1.1" 200 1877
+08/08/2019 03:13:08 PM INFO Submission completed: 6/6
