@@ -28,11 +28,11 @@ optional arguments:
 ### Example Command
 
 ```
-python D:\scripts\misi-robot.py E:\experiments\query_genomes E:\experiments\reference_genomes E:\experiments\output
+python "D:\scripts\misi-robot.py" "E:\experiments\query_genomes" "E:\experiments\reference_genomes" "E:\experiments\output"
 ```
 
 ### Example for Restarting a Submission Job
 
 ```
-python D:\scripts\misi-robot.py --start 145 E:\experiments\query_genomes E:\experiments\reference_genomes E:\experiments\output
+python "D:\scripts\misi-robot.py" --start 145 "E:\experiments\query_genomes" "E:\experiments\reference_genomes" "E:\experiments\output"
 ```
