@@ -43,6 +43,7 @@ ap.add_argument(
     help = ( "Start submitting jobs at this job number." +
              " Useful for restarting this script." +
              " Defaults to 1." ),
+    type = int,
     default = 1,
     metavar = 'NUMBER')
 args = ap.parse_args()
@@ -105,7 +106,6 @@ url = "https://ani.jgi-psf.org/html/calc_results.php"
 out_file_path = os.path.join(args.out_dir_path, "misi-results.csv")
 
 # Begin submitting data
-results = []
 for i, cmb in enumerate(cmb_list):
     if i+1 >= args.start:
 
@@ -114,19 +114,27 @@ for i, cmb in enumerate(cmb_list):
         files = {"file1" : open(cmb[0],"rb"),
                  "file2" : open(cmb[1],"rb")}
 
-        log.debug("Attempting submission: {}/{} {}".format(i+1, tot_subm, cmb))
-        
         # Post the data
-        try:
-            post = requests.post(url, data = data, files = files)
-            rtrn = post.content.decode()
-            html = bs(rtrn, 'html.parser')
-        except requests.exceptions.RequestException as e:
-            log.error("Submission failed: {}/{}".format(i+1, tot_subm))
-            log.error("There was an error submitting to the JGI server:")
-            log.error(e)
-            log.error("You can attempt restarting at this submission. Exiting.")
-            raise
+        tries = 100
+        for attempt in range(tries):
+            log.debug("Attempting submission: {}/{} {}".format(i+1, tot_subm, cmb))
+            try:
+                post = requests.post(url, data = data, files = files)
+                rtrn = post.content.decode()
+                html = bs(rtrn, 'html.parser')
+            except requests.exceptions.RequestException as e:
+                log.debug("Submission failed: {}/{}".format(i+1, tot_subm))
+                log.debug("There was an error submitting to the JGI server:")
+                log.debug(e)
+                if attempt < tries+1:
+                    log.debug("Retrying submission, attempt {}".format(attempt))
+                    continue
+                else:
+                    log.error("Submission failed: {}/{}".format(i+1, tot_subm))
+                    log.error("There was a persistent error submitting to the JGI server.")
+                    log.error("You can attempt restarting at this submission. Exiting")
+                    raise
+            break
 
         # Convert html tables to pandas tables
         html_tables = html.find_all("table", id="smallTable")
@@ -155,7 +163,7 @@ for i, cmb in enumerate(cmb_list):
 
         # Append to results
         if os.path.exists(out_file_path): 
-            df.to_csv(out_file_path, index = False, mode = "a", header=False)
+            df.to_csv(out_file_path, index = False, mode = "a", header = False)
         else:
             df.to_csv(out_file_path, index = False)
 
