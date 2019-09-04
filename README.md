@@ -11,7 +11,7 @@ greater than 500MB in size will be accepted.
 If your output directory contains existing misi-robot results, new results will
 be appended to the existing results file.
 
-```
+```{python}
 misi-robot.py [-h] [--start NUMBER] qry_dir_path ref_dir_path out_dir_path
 
 positional arguments:
@@ -27,12 +27,12 @@ optional arguments:
 
 ### Example Command
 
-```
+```{bash}
 python "D:\scripts\misi-robot.py" "E:\experiments\query_genomes" "E:\experiments\reference_genomes" "E:\experiments\output"
 ```
 
 ### Example for Restarting a Submission Job
 
-```
+```{bash}
 python "D:\scripts\misi-robot.py" --start 145 "E:\experiments\query_genomes" "E:\experiments\reference_genomes" "E:\experiments\output"
 ```
